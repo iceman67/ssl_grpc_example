@@ -12,9 +12,11 @@ For more details, see http://www.sandtable.com/using-ssl-with-grpc-in-python/
 
 Generate certificate for the server. Uses `openssl`.
 
+
 ```
 make gen_key
 ```
+* describe CN as localhost
 
 ## Install gRPC packages
 

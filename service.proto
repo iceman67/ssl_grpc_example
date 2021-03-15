@@ -1,8 +1,26 @@
 syntax = "proto3";
 
+service Server {
+  rpc Foo (Empty) returns (Empty) {}
+
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+
+  // Sends another greeting
+  rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
+
+}
+
 message Empty {
 }
 
-service Server {
-  rpc Foo (Empty) returns (Empty) {}
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
 }
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+

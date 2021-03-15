@@ -11,6 +11,12 @@ class ServerServicer(service_pb2_grpc.ServerServicer):
     def Foo(self, request, context):
         return service_pb2.Empty()
 
+    def SayHello(self, request, context):
+        return service_pb2.HelloReply(message='Hello, %s!' % request.name)
+
+    def SayHelloAgain(self, request, context):
+        return service_pb2.HelloReply(message='Hello again, %s!' % request.name)
+
 
 def main():
     port = '1337'
